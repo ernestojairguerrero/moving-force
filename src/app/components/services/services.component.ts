@@ -17,6 +17,6 @@ export class ServicesComponent {
     // { img: '../../../assets/img/carga.jpg', title: '', description: '' },
   ];
 
-  cotizaya: string = 'https://wa.me/51913394159?text=Hola%20mi%20nombre%20es:'
+  cotizaya: string = 'https://wa.me/+593986496051?text=Hola%20mi%20nombre%20es:'
 
 }
