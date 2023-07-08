@@ -1,0 +1,115 @@
+<app-navigation></app-navigation>
+<app-flyer [flyer]="flyer"></app-flyer>
+
+<section class="pages">
+
+  <form class="form" [formGroup]="contactForm">
+    <div class="title">
+      <h3>Solicitar cotización</h3>
+    </div>
+    <hr>
+
+    <section class="grid mt-1">
+
+      <div>
+        <label class="form-label">Nombres</label>
+        <input type="text" formControlName="nombre"
+          [ngClass]="{'error-input': contactForm.get('nombre')?.invalid && (contactForm.get('nombre')?.dirty || contactForm.get('nombre')?.touched), 'valid-input': contactForm.get('nombre')?.valid}">
+        <div class="error"
+          *ngIf="contactForm.get('nombre')?.invalid && (contactForm.get('nombre')?.dirty || contactForm.get('nombre')?.touched)">
+          <div *ngIf="contactForm.get('nombre')?.hasError('required')">El nombre es requerido.</div>
+          <div *ngIf="contactForm.get('nombre')?.hasError('minlength')">El nombre debe tener al menos 3 caracteres.
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label class="form-label">Apellidos</label>
+        <input type="text" formControlName="apellidos"
+          [ngClass]="{'error-input': contactForm.get('apellidos')?.invalid && (contactForm.get('apellidos')?.dirty || contactForm.get('apellidos')?.touched), 'valid-input': contactForm.get('apellidos')?.valid}">
+        <div class="error"
+          *ngIf="contactForm.get('apellidos')?.invalid && (contactForm.get('apellidos')?.dirty || contactForm.get('apellidos')?.touched)">
+          <div *ngIf="contactForm.get('apellidos')?.hasError('required')">Los apellidos son requeridos.</div>
+          <div *ngIf="contactForm.get('apellidos')?.hasError('minlength')">Los apellidos debe tener al menos 3
+            caracteres.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div>
+        <label class="form-label">Teléfono</label>
+        <input type="tel" formControlName="telefono"
+          [ngClass]="{'error-input': contactForm.get('telefono')?.invalid && (contactForm.get('telefono')?.dirty || contactForm.get('telefono')?.touched), 'valid-input': contactForm.get('telefono')?.valid}">
+        <div class="error"
+          *ngIf="contactForm.get('telefono')?.invalid && (contactForm.get('telefono')?.dirty || contactForm.get('telefono')?.touched)">
+          <div *ngIf="contactForm.get('telefono')?.hasError('required')">El teléfono es requerido.</div>
+          <div *ngIf="contactForm.get('telefono')?.hasError('minlength')">El teléfono debe tener al menos 3 caracteres.
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label class="form-label">Email</label>
+        <input type="email" formControlName="email"
+          [ngClass]="{'error-input': contactForm.get('email')?.invalid && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched), 'valid-input': contactForm.get('email')?.valid}">
+        <div class="error"
+          *ngIf="contactForm.get('email')?.invalid && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched)">
+          <div *ngIf="contactForm.get('email')?.hasError('required')">El email es requerido.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div>
+        <label class="form-label">Origen</label>
+        <input type="text" formControlName="origen"
+          [ngClass]="{'error-input': contactForm.get('origen')?.invalid && (contactForm.get('origen')?.dirty || contactForm.get('origen')?.touched), 'valid-input': contactForm.get('origen')?.valid}">
+        <div class="error"
+          *ngIf="contactForm.get('origen')?.invalid && (contactForm.get('origen')?.dirty || contactForm.get('origen')?.touched)">
+          <div *ngIf="contactForm.get('origen')?.hasError('required')">El origen es requerido.</div>
+          <div *ngIf="contactForm.get('origen')?.hasError('minlength')">El origen debe tener al menos 3 caracteres.
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label class="form-label">Destino</label>
+        <input type="text" formControlName="destino"
+          [ngClass]="{'error-input': contactForm.get('destino')?.invalid && (contactForm.get('destino')?.dirty || contactForm.get('destino')?.touched), 'valid-input': contactForm.get('destino')?.valid}">
+        <div class="error"
+          *ngIf="contactForm.get('destino')?.invalid && (contactForm.get('destino')?.dirty || contactForm.get('destino')?.touched)">
+          <div *ngIf="contactForm.get('destino')?.hasError('required')">El destino es requerido.</div>
+          <div *ngIf="contactForm.get('destino')?.hasError('minlength')">El destino debe tener al menos 3 caracteres.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div>
+      <label class="form-label">Mensaje</label>
+      <textarea formControlName="asunto" rows="3"
+        [ngClass]="{'error-input': contactForm.get('asunto')?.invalid && (contactForm.get('asunto')?.dirty || contactForm.get('asunto')?.touched), 'valid-input': contactForm.get('asunto')?.valid}"></textarea>
+      <div class="error"
+        *ngIf="contactForm.get('asunto')?.invalid && (contactForm.get('asunto')?.dirty || contactForm.get('asunto')?.touched)">
+        <div *ngIf="contactForm.get('asunto')?.hasError('required')">El mensaje es requerido.</div>
+        <div *ngIf="contactForm.get('asunto')?.hasError('minlength')">El mensaje debe tener al menos 10 caracteres.
+        </div>
+      </div>
+    </div>
+
+
+    <div class="boton">
+      <ng-container *ngIf="contactForm.valid; else noValid">
+        <button type="button" class="btn-success" (click)="enviarCotizacion()">Enviar cotización</button>
+      </ng-container>
+
+      <ng-template #noValid>
+        <button type="button" class="btn-invalid" (click)="validateForm()">Enviar cotización</button>
+      </ng-template>
+    </div>
+
+  </form>
+
+</section>
+<app-footer></app-footer>

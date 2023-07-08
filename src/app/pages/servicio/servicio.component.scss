@@ -1,0 +1,26 @@
+.teAyudamos {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background: var(--color-primary);
+  position: relative;
+  margin-top: -.5rem;
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+  }
+}
+
+@media only screen and (max-width:576px) {
+  .teAyudamos {
+    padding: 2rem;
+
+    h3 {
+      font-size: 1.3rem;
+    }
+  }
+}

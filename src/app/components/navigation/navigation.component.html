@@ -1,0 +1,20 @@
+<nav class="navPc">
+  <div class="childNavPc">
+
+    <ul>
+      <div class="logo">
+        <a routerLink="/inicio">
+          <img src="../../../assets/img/movin_force.jpg" alt="Logo">
+        </a>
+      </div>
+      <li *ngFor="let m of menu">
+        <a [routerLink]="m.url" routerLinkActive="active">{{m.name}}</a>
+      </li>
+    </ul>
+  </div>
+
+</nav>
+
+<nav class="navMobile">
+
+</nav>

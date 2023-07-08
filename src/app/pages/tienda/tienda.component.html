@@ -1,0 +1,15 @@
+<app-navigation></app-navigation>
+<app-flyer [flyer]="flyer"></app-flyer>
+
+<div class="cinta">
+  <h3>Tu satisfacción es nuestra prioridad: calidad y precio justo</h3>
+</div>
+<section class="pages">
+  <div class="tienda">
+    <div class="childTienda" *ngFor="let i of store">
+      <img [src]="i.img" [alt]="i.alt">
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

@@ -1,0 +1,14 @@
+<div class="services">
+  <div class="childServices">
+    <div class="boxServices" *ngFor="let s of servicios">
+      <div>
+        <img [src]="s.img" alt="Servicios Movig Force">
+        <h3>{{s.title}}</h3>
+        <p>{{s.description}}</p>
+      </div>
+      <div>
+        <a href="{{ cotizaya }}" target="_blank">Mas info...</a>
+      </div>
+    </div>
+  </div>
+</div>

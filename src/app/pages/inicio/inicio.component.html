@@ -1,0 +1,24 @@
+<app-navigation></app-navigation>
+<app-flyer [flyer]="flyer"></app-flyer>
+
+<div class="cotizaya">
+  <a href="{{ cotizaya }}" target="_blank">Pide una cotización</a>
+</div>
+
+<div class="porqueCotizar">
+  <h3>¿Por qué cotizar con nosotros?</h3>
+  <p>En <b>Moving Force</b> te ofrecemos la mejor experiencia en mudanzas, con el mejor servicio y al mejor precio.</p>
+</div>
+
+<section class="pages">
+
+  <div class="boxes">
+    <div class="childBox" *ngFor="let i of items">
+      <img src="../../../assets/svg/check.svg" alt="Check Moving_Force">
+      <h3>{{ i.title }}</h3>
+      <p> {{i.subtitle }} </p>
+    </div>
+  </div>
+
+</section>
+<app-footer></app-footer>
